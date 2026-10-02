@@ -6,11 +6,12 @@ import { DATA } from "@/data/resume";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
 import AwardsSection from "@/components/section/awards-section";
+import CertificationsSection from "@/components/section/certifications-section";
 import ProjectsSection from "@/components/section/projects-section";
 import PublicationsSection from "@/components/section/publications-section";
 import ResearchSection from "@/components/section/research-section";
 import WorkSection from "@/components/section/work-section";
-import { MapPin } from "lucide-react";
+import { Download, MapPin } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -54,6 +55,11 @@ const sectionComponents: Record<string, React.ReactNode> = {
   awards: (
     <BlurFade delay={BLUR_FADE_DELAY * 14}>
       <AwardsSection />
+    </BlurFade>
+  ),
+  certifications: (
+    <BlurFade delay={BLUR_FADE_DELAY * 14}>
+      <CertificationsSection />
     </BlurFade>
   ),
   education: (
@@ -160,6 +166,14 @@ export default function HomePage() {
                 <MapPin className="size-4 text-teal-700 dark:text-teal-400" aria-hidden />
                 <span>{DATA.location}</span>
               </div>
+              <a
+                href={DATA.resumeUrl}
+                download
+                className="inline-flex w-fit items-center gap-2 rounded-lg border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary/15"
+              >
+                <Download className="size-4" aria-hidden />
+                Download resume
+              </a>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
               <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
