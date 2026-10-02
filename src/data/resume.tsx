@@ -58,9 +58,9 @@ export const DATA = {
   },
   skills: [
     { category: "Languages", items: ["Python", "Java", "C", "SQL"] },
-    { category: "ML / AI", items: ["LLMs", "RAG", "Diffusion Models", "Hallucination Detection"] },
+    { category: "ML / AI", items: ["LLMs", "RAG", "Diffusion Models", "Hallucination Detection", "Prompt Engineering", "PyTorch", "TensorFlow", "Hugging Face", "Model Fine-Tuning"] },
     { category: "Cloud / Systems", items: ["AWS", "AWS E2E", "SageMaker", "Lambda", "Step Functions", "S3", "Jenkins", "Grafana", "Redfish", "REST APIs"] },
-    { category: "Frameworks / Tools", items: ["React", "Django", "Git", "WebSocket"] },
+    { category: "Frameworks / Tools", items: ["React", "Django", "Git", "WebSocket", "Linux", "Bash"] },
   ],
   photos: EMPTY_PHOTOS,
   hackathons: EMPTY_HACKATHONS,

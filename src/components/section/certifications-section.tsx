@@ -4,7 +4,7 @@ import { DATA } from "@/data/resume";
 const providerLogos = {
   AWS: {
     logo: "/logos/aws.svg",
-    logoClass: "h-8 w-14 rounded bg-white p-1",
+    logoClass: "h-9 w-16 rounded bg-white p-1 object-contain",
   },
   Udacity: {
     logo: "/logos/udacity.svg",
