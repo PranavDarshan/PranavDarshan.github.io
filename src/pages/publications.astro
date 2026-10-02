@@ -1,0 +1,113 @@
+---
+export const prerender = true;
+import Layout from "@/layouts/Layout.astro";
+import { DATA } from "@/data/resume";
+
+const publications = [
+  {
+    ...DATA.publications[0],
+    description: DATA.research[0].description,
+    findings: [
+      "Four language models and three factual QA datasets",
+      "12 model-dataset settings evaluated",
+      "0.35–0.46 AUC detectability gap",
+    ],
+  },
+  {
+    ...DATA.publications[1],
+    description: DATA.research[1].description,
+    findings: [
+      "Trajectory Variance Score (TVS)",
+      "70.10% accuracy on LLaDA across four datasets",
+      "0.7647 AUROC",
+    ],
+  },
+  {
+    ...DATA.publications[2],
+    description: DATA.publications[2].description,
+    findings: [],
+  },
+  {
+    ...DATA.publications[3],
+    description: DATA.publications[3].description,
+    findings: [],
+  },
+  {
+    ...DATA.publications[4],
+    description: DATA.projects[1].description,
+    findings: [],
+  },
+];
+---
+
+<Layout
+  title="Publications"
+  description="Research and publications on hallucination detection, diffusion models, and RAG."
+>
+  <main class="flex flex-col gap-10">
+    <header class="flex flex-col gap-4">
+      <a
+        href="/#research"
+        class="w-fit text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <span aria-hidden="true">←</span> Back to research
+      </a>
+      <div class="flex flex-col gap-3">
+        <p class="text-sm font-medium text-teal-300">Research &amp; Publications</p>
+        <h1 class="text-3xl font-semibold leading-tight sm:text-4xl">Selected work on reliable generative models</h1>
+        <p class="max-w-2xl leading-relaxed text-muted-foreground">
+          Research on hallucination detection in language models and knowledge conflicts in diffusion models, alongside earlier work on automated exam evaluation.
+        </p>
+      </div>
+    </header>
+
+    <section class="flex flex-col gap-4" aria-label="Publications">
+      {publications.map((publication) => (
+        <article class:list={[
+          "flex flex-col gap-4 rounded-xl border bg-card/60 p-5 sm:p-6",
+          publication.featured ? "border-sky-400/40" : "border-border",
+        ]}>
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div class="flex flex-col gap-2">
+              <h2 class="text-lg font-semibold leading-snug sm:text-xl">
+                <a
+                  href={publication.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="transition-colors hover:text-sky-300"
+                >
+                  {publication.title}
+                </a>
+              </h2>
+              <p class="text-sm text-muted-foreground">{publication.venue}</p>
+            </div>
+            <span class="w-fit rounded-md border border-border px-2.5 py-1 text-xs font-medium text-muted-foreground">
+              {publication.status}
+            </span>
+          </div>
+          <p class="text-sm leading-relaxed text-muted-foreground">{publication.description}</p>
+          {publication.findings.length > 0 && (
+            <ul class="flex flex-wrap gap-2">
+              {publication.findings.map((finding) => (
+                <li class="rounded-md border border-border/80 bg-background/70 px-2.5 py-1.5 text-xs text-foreground/80">
+                  {finding}
+                </li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </section>
+
+    <section class="flex flex-col gap-3 border-t border-border pt-6" aria-labelledby="interests-heading">
+      <h2 id="interests-heading" class="text-lg font-semibold">Research interests</h2>
+      <div class="flex flex-wrap gap-2">
+        {DATA.researchInterests.map((interest) => (
+          <span class="rounded-md border border-teal-400/25 bg-teal-400/5 px-2.5 py-1 text-xs text-teal-200">
+            {interest}
+          </span>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
