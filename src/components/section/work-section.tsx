@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { DATA } from "@/data/resume";
 import { ChevronDown, ChevronRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Markdown from "react-markdown";
 
@@ -78,6 +79,17 @@ export default function WorkSection() {
           </AccordionTrigger>
           <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
             <Markdown>{work.description}</Markdown>
+            {work.href && (
+              <a
+                href={work.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sky-700 transition-colors hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200"
+              >
+                View merged pull request
+                <ArrowUpRight className="size-4" aria-hidden />
+              </a>
+            )}
           </AccordionContent>
         </AccordionItem>
       ))}

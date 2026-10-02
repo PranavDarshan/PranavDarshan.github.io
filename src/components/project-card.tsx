@@ -29,6 +29,7 @@ interface Props {
   description: string;
   dates?: string;
   tags: readonly string[];
+  accent?: "blue" | "teal" | "violet";
   image?: string;
   video?: string;
   links?: readonly {
@@ -45,15 +46,23 @@ export function ProjectCard({
   description,
   dates,
   tags,
+  accent = "blue",
   image,
   video,
   links,
   className,
 }: Props) {
+  const accents = {
+    blue: "border-sky-400/40 bg-sky-400/5",
+    teal: "border-teal-400/40 bg-teal-400/5",
+    violet: "border-violet-400/40 bg-violet-400/5",
+  };
+
   return (
     <div
       className={cn(
-        "flex flex-col h-full border border-border rounded-xl overflow-hidden transition-all duration-200",
+        "flex flex-col h-full border rounded-xl overflow-hidden transition-all duration-200",
+        accents[accent],
         href && "cursor-pointer hover:ring-2 hover:ring-muted",
         className
       )}

@@ -12,6 +12,7 @@ interface FlickeringGridProps extends React.HTMLAttributes<HTMLDivElement> {
   height?: number
   className?: string
   maxOpacity?: number
+  lightModeMaxOpacity?: number
 }
 
 export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
@@ -23,6 +24,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   height,
   className,
   maxOpacity = 0.3,
+  lightModeMaxOpacity,
   ...props
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -30,6 +32,8 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
   const [isInView, setIsInView] = useState(false)
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 })
   const [resolvedColor, setResolvedColor] = useState<string>("rgb(0, 0, 0)")
+  const [isDarkMode, setIsDarkMode] = useState(true)
+  const opacityLimit = isDarkMode ? maxOpacity : lightModeMaxOpacity ?? maxOpacity
 
   const resolveColor = useCallback((colorValue: string | undefined): string => {
     if (typeof window === "undefined") {
@@ -56,6 +60,7 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     const updateColor = () => {
       const resolved = resolveColor(color)
       setResolvedColor(resolved)
+      setIsDarkMode(document.documentElement.classList.contains("dark"))
     }
 
     updateColor()
@@ -105,23 +110,23 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
 
       const squares = new Float32Array(cols * rows)
       for (let i = 0; i < squares.length; i++) {
-        squares[i] = Math.random() * maxOpacity
+        squares[i] = Math.random() * opacityLimit
       }
 
       return { cols, rows, squares, dpr }
     },
-    [squareSize, gridGap, maxOpacity]
+    [squareSize, gridGap, opacityLimit]
   )
 
   const updateSquares = useCallback(
     (squares: Float32Array, deltaTime: number) => {
       for (let i = 0; i < squares.length; i++) {
         if (Math.random() < flickerChance * deltaTime) {
-          squares[i] = Math.random() * maxOpacity
+          squares[i] = Math.random() * opacityLimit
         }
       }
     },
-    [flickerChance, maxOpacity]
+    [flickerChance, opacityLimit]
   )
 
   const drawGrid = useCallback(
@@ -237,4 +242,3 @@ export const FlickeringGrid: React.FC<FlickeringGridProps> = ({
     </div>
   )
 }
-

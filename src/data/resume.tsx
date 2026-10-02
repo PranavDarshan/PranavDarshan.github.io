@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { BookOpenText, BriefcaseBusiness, House } from "lucide-react";
+import { BookOpenText, BriefcaseBusiness, FolderKanban, GraduationCap, House } from "lucide-react";
 import type { ReactNode } from "react";
 
 const EMPTY_HACKATHONS: {
@@ -65,6 +65,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: House, label: "Home" },
     { href: "/#work", icon: BriefcaseBusiness, label: "Experience" },
+    { href: "/projects", icon: FolderKanban, label: "Projects" },
     { href: "/publications", icon: BookOpenText, label: "Publications" },
   ],
   contact: {
@@ -81,6 +82,12 @@ export const DATA = {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/pranav-darshan/",
         icon: Icons.linkedin,
+        navbar: true,
+      },
+      "Google Scholar": {
+        name: "Google Scholar",
+        url: "https://scholar.google.com/citations?user=18hK4OYAAAAJ&hl=en",
+        icon: GraduationCap,
         navbar: true,
       },
     },
@@ -149,7 +156,7 @@ export const DATA = {
     },
     {
       company: "Hewlett Packard Enterprise",
-      href: "",
+      href: "https://github.com/DMTF/Redfish-Interface-Emulator/pull/127",
       badges: [],
       location: "Bengaluru, India",
       title: "CPP Project Intern",
@@ -180,6 +187,7 @@ export const DATA = {
       description:
         "A full-stack paper-trading platform for historical market replay with real-time candlestick charts and manual or algorithmic trading. Includes a Python strategy editor with SMA and RSI, market and limit orders, stop loss, long/short positions, P&L and position sizing, margin calls, and analytics for win rate, drawdown, and returns.",
       technologies: ["React", "TypeScript", "Python", "WebSocket"],
+      accent: "blue",
       links: [],
       image: "",
       video: "",
@@ -192,6 +200,7 @@ export const DATA = {
       description:
         "An automated handwritten exam evaluation system using a fine-tuned LLaMA2 model and RAG to retrieve relevant textbook content. Inference ran on AWS SageMaker with Lambda-based API integration; the work was published in IEEE Xplore.",
       technologies: ["LLaMA2", "RAG", "AWS SageMaker", "Lambda"],
+      accent: "teal",
       links: [],
       image: "",
       video: "",

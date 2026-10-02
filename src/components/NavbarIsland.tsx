@@ -4,7 +4,12 @@ import Navbar from "@/components/navbar";
 
 export default function NavbarIsland() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="dark"
+      enableSystem={false}
+      storageKey="pranav-portfolio-theme"
+    >
       <TooltipProvider delayDuration={0}>
         <Navbar />
       </TooltipProvider>
