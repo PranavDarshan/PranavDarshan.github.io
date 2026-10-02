@@ -26,8 +26,15 @@ export default function AwardsSection() {
           </h3>
           <ul className="flex flex-col gap-3">
             {DATA.certifications.map((certification) => (
-              <li key={certification} className="border-l-2 border-teal-400/40 pl-3 text-sm leading-relaxed">
-                {certification}
+              <li key={certification.href} className="border-l-2 border-teal-400/40 pl-3 text-sm leading-relaxed">
+                <a
+                  href={certification.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-border underline-offset-2 transition-colors hover:text-teal-300"
+                >
+                  {certification.title}
+                </a>
               </li>
             ))}
           </ul>

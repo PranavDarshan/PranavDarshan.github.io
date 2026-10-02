@@ -129,7 +129,7 @@ export const DATA = {
       badges: ["Research"],
       location: "Remote",
       title: "Research Collaborator",
-      logoUrl: "/logos/thws.svg",
+      logoUrl: "/logos/thws.png",
       start: "Jan 2026",
       end: undefined,
       description:
@@ -165,7 +165,7 @@ export const DATA = {
       school: "R.V. College of Engineering",
       href: "",
       degree: "Bachelor of Engineering in Computer Science and Engineering · CGPA 9.66/10",
-      logoUrl: "/logos/rvce.jpg",
+      logoUrl: "/logos/rvce-crest.png",
       logoSource: "https://commons.wikimedia.org/wiki/File:Rv_New_logo_with_address.jpg",
       logoCredit: "Logo: Shreyas shaurya / Wikimedia Commons · CC BY-SA 4.0",
       start: "2022",
@@ -250,9 +250,21 @@ export const DATA = {
     "1st Place – IEEE Hackathon AI in Education, 2024",
   ],
   certifications: [
-    "AWS Certified Cloud Practitioner (2025–2028)",
-    "AWS Machine Learning Fundamentals – Udacity",
-    "AI Programming with Python – Udacity",
-    "Financial Markets – Coursera",
+    {
+      title: "AWS Certified Cloud Practitioner (2025–2028)",
+      href: "https://www.credly.com/badges/b10090ee-aa71-4eb1-a329-a3e610c2ab76/public_url",
+    },
+    {
+      title: "AWS Machine Learning Fundamentals – Udacity",
+      href: "https://www.udacity.com/certificate/e/c1158722-f6c0-11ee-af07-b327f9d37ad7",
+    },
+    {
+      title: "AI Programming with Python – Udacity",
+      href: "https://www.udacity.com/certificate/e/82a03532-6c23-11ee-b618-13931275cae6",
+    },
+    {
+      title: "Financial Markets – Coursera",
+      href: "https://www.coursera.org/account/accomplishments/certificate/KX6HTCMAJ79C",
+    },
   ],
 } as const;
