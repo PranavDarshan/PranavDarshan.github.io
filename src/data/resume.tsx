@@ -166,8 +166,6 @@ export const DATA = {
       href: "",
       degree: "Bachelor of Engineering in Computer Science and Engineering · CGPA 9.66/10",
       logoUrl: "/logos/rvce-crest.png",
-      logoSource: "https://commons.wikimedia.org/wiki/File:Rv_New_logo_with_address.jpg",
-      logoCredit: "Logo: Shreyas shaurya / Wikimedia Commons · CC BY-SA 4.0",
       start: "2022",
       end: "2026",
       location: "Bengaluru, India",

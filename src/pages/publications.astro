@@ -53,7 +53,7 @@ const publications = [
         <span aria-hidden="true">←</span> Back to research
       </a>
       <div class="flex flex-col gap-3">
-        <p class="text-sm font-medium text-teal-300">Research &amp; Publications</p>
+        <p class="text-sm font-medium text-teal-700 dark:text-teal-300">Research &amp; Publications</p>
         <h1 class="text-3xl font-semibold leading-tight sm:text-4xl">Selected work on reliable generative models</h1>
         <p class="max-w-2xl leading-relaxed text-muted-foreground">
           Research on hallucination detection in language models and knowledge conflicts in diffusion models, alongside earlier work on automated exam evaluation.
@@ -74,7 +74,7 @@ const publications = [
                   href={publication.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="transition-colors hover:text-sky-300"
+                  class="transition-colors hover:text-sky-700 dark:hover:text-sky-300"
                 >
                   {publication.title}
                 </a>
@@ -103,7 +103,7 @@ const publications = [
       <h2 id="interests-heading" class="text-lg font-semibold">Research interests</h2>
       <div class="flex flex-wrap gap-2">
         {DATA.researchInterests.map((interest) => (
-          <span class="rounded-md border border-teal-400/25 bg-teal-400/5 px-2.5 py-1 text-xs text-teal-200">
+          <span class="rounded-md border border-teal-400/25 bg-teal-400/5 px-2.5 py-1 text-xs text-teal-800 dark:text-teal-200">
             {interest}
           </span>
         ))}

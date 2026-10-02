@@ -62,6 +62,8 @@ const { baseFontSize } = CONFIG.typography;
       set:html={`
       :root {
         --radius: ${radius};
+        --grid-teal: oklch(0.45 0.12 180);
+        --grid-blue: oklch(0.48 0.15 250);
         --background: ${light.background};
         --foreground: ${light.foreground};
         --card: ${light.card};
@@ -82,6 +84,8 @@ const { baseFontSize } = CONFIG.typography;
         --ring: ${light.ring};
       }
       .dark {
+        --grid-teal: #5eead4;
+        --grid-blue: #60a5fa;
         --background: ${dark.background};
         --foreground: ${dark.foreground};
         --card: ${dark.card};
@@ -105,7 +109,7 @@ const { baseFontSize } = CONFIG.typography;
     ></style>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 
     <!-- Primary meta -->
     <title>{pageTitle}</title>
@@ -141,7 +145,7 @@ const { baseFontSize } = CONFIG.typography;
         className="h-full w-full"
         squareSize={2}
         gridGap={2}
-        color="#5eead4"
+        color="var(--grid-teal)"
         style={{
           maskImage: "linear-gradient(to bottom, black, transparent)",
           WebkitMaskImage: "linear-gradient(to bottom, black, transparent)",
@@ -156,7 +160,7 @@ const { baseFontSize } = CONFIG.typography;
           className="h-full w-full"
           squareSize={2}
           gridGap={2}
-          color="#60a5fa"
+          color="var(--grid-teal)"
           style={{
             maskImage: "linear-gradient(to right, black, transparent)",
             WebkitMaskImage: "linear-gradient(to right, black, transparent)",
@@ -169,6 +173,7 @@ const { baseFontSize } = CONFIG.typography;
           className="h-full w-full"
           squareSize={2}
           gridGap={2}
+          color="var(--grid-blue)"
           style={{
             maskImage: "linear-gradient(to left, black, transparent)",
             WebkitMaskImage: "linear-gradient(to left, black, transparent)",
@@ -183,6 +188,7 @@ const { baseFontSize } = CONFIG.typography;
         className="h-full w-full"
         squareSize={2}
         gridGap={2}
+        color="var(--grid-teal)"
         style={{
           maskImage: "linear-gradient(to top, black, transparent)",
           WebkitMaskImage: "linear-gradient(to top, black, transparent)",

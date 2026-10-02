@@ -29,7 +29,7 @@ export default function PublicationsSection() {
                   href={publication.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-colors hover:text-sky-300"
+                  className="transition-colors hover:text-sky-700 dark:hover:text-sky-300"
                 >
                   {publication.title}
                 </a>

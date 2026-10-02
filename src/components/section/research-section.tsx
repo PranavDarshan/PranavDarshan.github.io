@@ -33,9 +33,9 @@ export default function ResearchSection() {
       <div className="flex flex-wrap gap-2" aria-label="Research interests">
         {DATA.researchInterests.map((interest, index) => {
           const colors = [
-            "border-sky-400/30 text-sky-300",
-            "border-violet-400/30 text-violet-300",
-            "border-teal-400/30 text-teal-300",
+            "border-sky-400/30 text-sky-700 dark:text-sky-300",
+            "border-violet-400/30 text-violet-700 dark:text-violet-300",
+            "border-teal-400/30 text-teal-700 dark:text-teal-300",
           ];
           return (
             <Badge key={interest} variant="outline" className={colors[index % colors.length]}>
@@ -46,7 +46,7 @@ export default function ResearchSection() {
       </div>
       <a
         href="/publications"
-        className="inline-flex w-fit items-center gap-1 text-sm font-medium text-sky-300 transition-colors hover:text-sky-200"
+        className="inline-flex w-fit items-center gap-1 text-sm font-medium text-sky-700 transition-colors hover:text-sky-800 dark:text-sky-300 dark:hover:text-sky-200"
       >
         Explore publication details
         <ArrowUpRight className="size-4" aria-hidden />

@@ -80,16 +80,6 @@ const sectionComponents: Record<string, React.ReactNode> = {
                     <div className="font-semibold leading-none">{education.school}</div>
                     <div className="font-sans text-sm text-muted-foreground">{education.degree}</div>
                     <div className="font-sans text-xs text-muted-foreground">{education.location}</div>
-                    {education.logoCredit && education.logoSource && (
-                      <a
-                        href={education.logoSource}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-fit font-sans text-xs text-muted-foreground underline decoration-border underline-offset-2 hover:text-foreground"
-                      >
-                        {education.logoCredit}
-                      </a>
-                    )}
                   </div>
                 </div>
                 <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
@@ -167,7 +157,7 @@ export default function HomePage() {
                 text={DATA.description}
               />
               <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                <MapPin className="size-4 text-teal-400" aria-hidden />
+                <MapPin className="size-4 text-teal-700 dark:text-teal-400" aria-hidden />
                 <span>{DATA.location}</span>
               </div>
             </div>
