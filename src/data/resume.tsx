@@ -145,6 +145,18 @@ export const DATA = {
         "Researching hallucination detection and RAG conflicts in language and diffusion models. Two workshop papers were accepted: GlobalSouthAI @ NeurIPS 2026 and UncertaiNLP @ EMNLP 2026.",
     },
     {
+      company: "RVCE – Centre of Excellence in Connected Autonomous Vehicles",
+      href: "",
+      badges: ["Research"],
+      location: "Bengaluru, India",
+      title: "Research Collaborator",
+      logoUrl: "/logos/rvce-crest.png",
+      start: "",
+      end: undefined,
+      description:
+        "Collaborating on 360-degree LiDAR perception in dense, unstructured urban traffic. The work explores panoramic sensing, azimuthal sector-wise processing, and rotation-equivariant sparse convolutions, evaluated on a custom Ouster OS0 dataset collected in Indian urban conditions. Detection was strongest for cars (92.02/90.51), buses (80.53/76.34), and trucks (78.59/74.16), with smaller and more variable road users presenting greater challenges. This work is titled **Eyes All Around: Design and Analysis of 360-Degree LiDAR Perception Using Equivariant Feature Learning in Unstructured Traffic**. [RVCE Centre of Excellence](https://rvce.edu.in/department/ece/centre_of_excellence_in_connected_autonomous_vehicles/).",
+    },
+    {
       company: "Hewlett Packard Enterprise Aruba",
       href: "",
       badges: [],
@@ -307,8 +319,18 @@ export const DATA = {
     },
   ],
   awards: [
-    "Award of Merit – INITIATE Enterprise Architecture 2025 Competition, The Open Group",
-    "1st Place – IEEE Hackathon AI in Education, 2024",
+    {
+      title: "Award of Merit",
+      event: "INITIATE Enterprise Architecture Competition",
+      organization: "The Open Group",
+      year: "2025",
+    },
+    {
+      title: "1st Place",
+      event: "IEEE Hackathon: AI in Education",
+      organization: "IEEE",
+      year: "2024",
+    },
   ],
   certifications: [
     {
